@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Village Reality</title>
+    <meta name="description" content="Hello, WebVR! - A-Frame">
+    <script src="https://aframe.io/releases/0.5.0/aframe.min.js"></script>
+    <script>
+      AFRAME.registerComponent('change-color-on-hover', {
+    schema: {
+      color: {default: 'red'}
+    },
+    init: function () {
+      var data = this.data;
+      var el = this.el;
+      var defaultColor = el.getAttribute('material').color;
+      el.addEventListener('mouseenter', function () {
+        el.setAttribute('color', data.color);
+      });
+      el.addEventListener('mouseleave', function () {
+        el.setAttribute('color', defaultColor);
+      });
+    }
+  });
+    
+    </script>
+  </head>
+  
+  <body>
+    
+    <a-scene>
+      <a-sphere position="-7.602 5,449 -3.541" rotation= "0 45.745 0" radius="1.00" src="https://cdn.glitch.com/737efcc0-4bae-4ef3-a11b-f9aa0fdc12fe%2Fglobe.png?1501536726084"> 
+        <a-animation attribute="rotation" repeat="indefinite" to="0 360 0"></a-animation>
+     </a-sphere>
+     
+     <a-text value="Village Reality" color="#FFFFFF" position="0 3.5 -2" align="center" width="15" height="15"></a-text>
+     <a-text value="Build the toilet!" color="#FFFFFF" position="7.879 0.714 7.525" align="center" rotation= "0 -118.620 0" width="20" height="20"></a-text>
+     <a-plane src="https://cdn.glitch.com/737efcc0-4bae-4ef3-a11b-f9aa0fdc12fe%2Finfo1.png?1501612386373" position="10.875 3.142 -4.3" rotation="-.917 -56.15 1.089" width="8" height="8" color="#7BC8A4"></a-plane>
+     <a-text value="By: Sushmasri Katakam, Janice Liu, and Esperanza Avila" color="#FFFFFF" position="0 2.7 -2" align="center" width="5" height="5"></a-text>
+     <a-plane src="https://cdn.glitch.com/737efcc0-4bae-4ef3-a11b-f9aa0fdc12fe%2Farrow.png?1501623375724" position="1.502 1.500 -1.662" rotation: "0 0 0" width="0.4" height="0.3"></a-plane>
+     <a-text value="Plumbing service:$150" color"#FFFFFF" position="10.112 11.497 10.041" rotation="-0 -118 0" align="center" width="9" height="9"></a-text>
+     <a-text value="Toilet: $214" color"#FFFFFF" position="9.932 12.772 9.989" rotation="0 -118.00 0" align="center" width="12" height="12"></a-text>
+     <a-text value="Installation: $376" color"#FFFFFF" position="10.214 12.301 10.190" rotation="0 -118 0" align="center" width="12" height="12"></a-text>
+     <a-plane src="https://cdn.glitch.com/737efcc0-4bae-4ef3-a11b-f9aa0fdc12fe%2Fgetinvolved.jpg.png?1501522791546" position="-10 4.000 0.320" rotation="-2 85 0" width="6" height="6"></a-plane>
+     <a-plane src="https://cdn.glitch.com/737efcc0-4bae-4ef3-a11b-f9aa0fdc12fe%2Fimage.png?1501522880049" position="-5.593 3.045 8.938" rotation="2.340 156.160 -0.050" width="5" height="5"></a-plane>
+     <a-plane src="https://cdn.glitch.com/737efcc0-4bae-4ef3-a11b-f9aa0fdc12fe%2Fethiopia.png?1501534388532" position="-4.841 -1.200 -19.100" rotation="-0.630 6.500 0.000" width="6" height="6"></a-plane>
+     <a-plane src="https://cdn.glitch.com/737efcc0-4bae-4ef3-a11b-f9aa0fdc12fe%2Findia.png?1501534389700" position="3.000 -3.200 -15.399" rotaion="0.000 0.000 0.000" width="4" height="4"></a-plane>
+     <a-plane src="https://cdn.glitch.com/737efcc0-4bae-4ef3-a11b-f9aa0fdc12fe%2Fchina.png?1501536294142" position="5.300 3.000 -28.724" rotation="-11.803 -1.719 -0.688" width="7.2" height="7"></a-plane>
+      <a-assets>
+  <!-- ... -->
+      <img id="bottomTioletTexture" src="https://ucarecdn.com/540d12cc-f27b-4234-ae97-9feffdb4af3d/"/>
+  <!-- ... -->
+      </a-assets>
+      
+         
+<!-- 360 background-->
+    <a-sky src="https://cdn.glitch.com/737efcc0-4bae-4ef3-a11b-f9aa0fdc12fe%2Fvillage.jpg?1501187413692" rotation="0 -130 0"></a-sky>
+  
+      
+   <a-entity id="bottom-plane" position="0 0 0" > 
+ <a-plane src="https://cdn.glitch.com/737efcc0-4bae-4ef3-a11b-f9aa0fdc12fe%2Fbottom.png?1501274310826" position="7.914 8.766 15.826" rotation="0 -118.620 0" width="4" height="2" ></a-plane> 
+  <a-animation attribute= "position" from="0 0 0" to="0.829 -6.322 -7.21" dur="2000" begin="mouseenter"> </a-animation>
+ 
+      </a-entity>
+      
+      <a-entity id="bowl-plane" position="0 0 0" >
+   <a-plane src="https://cdn.glitch.com/737efcc0-4bae-4ef3-a11b-f9aa0fdc12fe%2Fbowl.png?1501274335281" position="13.308 8.771 3.827" rotation="0 -118.620 0" width="4" height="3.5" ></a-plane> 
+  <a-animation attribute= "position" from="0 0 0" to="-4.587 -3.905 4.828" dur="2000" begin="mouseenter"> </a-animation>
+  
+      </a-entity>
+    
+      <a-entity id="tank-plane" position="0 0 0">
+        <a-plane src="https://cdn.glitch.com/737efcc0-4bae-4ef3-a11b-f9aa0fdc12fe%2Ftank.png?1501274342395" position="9.882 11.650 9.429" rotation="0 -118.620 0" width="4.510" height="3.5" ></a-plane> 
+  
+  <a-animation attribute= "position" from="0 0 0" to="-.731 -3.908 -0.174" dur="2000" begin="mouseenter"> </a-animation>
+  
+      </a-entity>
+  
+    <a-camera position="0 0.2 1.3"><a-cursor material="color: #8fedfc; shader: flat">></a-cursor></a-camera> 
+      
+    </a-scene>
+  </body>
+</html>
+  
+
+
+<!--
+ <a-box color="red" position="10 -5 0" rotation="0 0 0" scale="2 2 2"></a-box>
+       <a-plane position="10 -5 -4" rotation="-90 0 0" width="10" height="10"></a-plane>
+      <a-sky color="#ECECEC"></a-sky>
+<a-assets>
+  <img id="groundTexture" src="https://cdn.aframe.io/a-painter/images/floor.jpg">
+</a-assets>
+<a-plane src="#groundTexture" rotation="-90 0 0" width="30" height="30"></a-plane>
+<a-image src="#logo" width="200" height="100"></a-image>
+-->
+
+<!--https://ucarecdn.com/540d12cc-f27b-4234-ae97-9feffdb4af3d/
+https://ucarecdn.com/fa97803c-c2f6-4d7f-b792-bd30303d6431/
+https://ucarecdn.com/9855fd7b-a6ee-4b89-98b5-cbac67b37a82/ -->
